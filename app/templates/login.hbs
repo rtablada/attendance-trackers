@@ -1,0 +1,11 @@
+<form class="col s6 offset-s3" {{action 'login' on='submit'}}>
+  <h2>Login</h2>
+
+  {{md-input value=email label='Email'}}
+
+  {{md-input value=password label='Password' type="password"}}
+
+  {{md-btn text='Login'
+    action='login'
+    class='indigo darken-2'}}
+</form>
