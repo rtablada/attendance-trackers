@@ -1,0 +1,32 @@
+<div class="col s6 offset-s3">
+  <h2>New Student For {{ cohort.title }}</h2>
+
+  {{#md-card}}
+    <form class="card-content" {{action 'submit' on='submit'}}>
+      {{md-input-date label='Date' value=date}}
+
+      {{#md-collection content=model.students as |student|}}
+        <div class='collection-item'>
+          {{student.firstName}} {{student.lastName}}
+
+          <span class="secondary-content">
+            {{#md-radios selection=student.currentAttendance}}
+                {{md-radio value='on-time' name="On Time" default=true tagName="span"}}
+                {{md-radio value='less-15' name="< 15 Late" tagName="span"}}
+                {{md-radio value='more-15' name="> 15 Late" tagName="span"}}
+                {{md-radio value='more-30' name="> 30 Late" tagName="span"}}
+            {{/md-radios}}
+          </span>
+        </div>
+      {{/md-collection}}
+
+      {{md-btn text='Submit'
+        action='submit'
+        class='indigo darken-2 right'}}
+
+      {{md-btn text='Back'
+        action='back'
+        class='grey darken-2'}}
+    </form>
+  {{/md-card}}
+</div>

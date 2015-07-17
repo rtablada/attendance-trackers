@@ -16,8 +16,9 @@ Router.map(function() {
 
     this.route('classes', {path: '/'}, function () {
       this.route('create', {path: 'new-class'});
-      this.route('edit', {path: 'edit-class/:cohort_id'});
+      this.route('edit', {path: 'class-details/:cohort_id'});
       this.route('add-student', {path: 'add-student/:cohort_id'});
+      this.route('take-attendance', {path: 'take-attendance/:cohort_id'});
     });
   });
 });
