@@ -44,7 +44,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.baseURL = 'attendance-trackers';
+    ENV.locationType = 'hash';
   }
 
   return ENV;
