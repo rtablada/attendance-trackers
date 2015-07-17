@@ -1,0 +1,18 @@
+<div class="col s6 offset-s3">
+  <h2>New Class</h2>
+
+  <div class="card">
+    <form class="card-content" {{action 'submit' on='submit'}}>
+      {{md-input value=title label='Class Title'}}
+
+      {{md-btn text='Submit'
+        action='submit'
+        class='indigo darken-2 right'}}
+
+      {{md-btn text='Back'
+        action='back'
+        class='grey darken-2'}}
+    </form>
+  </div>
+</div>
+

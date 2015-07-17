@@ -10,6 +10,10 @@ Router.map(function() {
   this.route('logout');
 
   this.route('dashboard', {path: '/'}, function () {
+    this.route('classes', {path: '/'}, function () {
+      this.route('create', {path: 'new-class'});
+      this.route('edit', {path: 'edit-class/:cohort_id'});
+    });
   });
 });
 

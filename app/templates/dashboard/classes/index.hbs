@@ -1,0 +1,23 @@
+<div class="col s6 offset-s3">
+  <h2>Classes</h2>
+
+  <div class="row">
+    {{md-btn text='New Class'
+      icon='mdi-action-favorite'
+      action='newClass'
+      class='indigo darken-2 right'}}
+  </div>
+
+  {{#each cohort in model}}
+    <div class="row card">
+      <div class="card-content">
+          {{cohort.title}}
+
+          <div class="buttons right">
+            {{#link-to 'dashboard.classes.edit' cohort class='waves-effect waves-light btn'}}Edit{{/link-to}}
+          </div>
+      </div>
+    </div>
+  {{/each}}
+</div>
+

@@ -43,6 +43,6 @@
     "ember-modal-dialog": "0.7.5",
     "ember-new-computed": "1.0.2",
     "ember-radio-button": "1.0.4",
-    "emberfire": "1.4.7"
+    "emberfire": "firebase/emberfire#master"
   }
 }
