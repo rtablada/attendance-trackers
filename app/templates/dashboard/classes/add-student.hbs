@@ -1,0 +1,19 @@
+<div class="col s6 offset-s3">
+  <h2>New Student For {{ cohort.title }}</h2>
+
+  {{#md-card}}
+    <form class="card-content">
+      {{md-input value=firstName label='First Name'}}
+      {{md-input value=lastName label='Last Name'}}
+      {{md-input value=email label='Email'}}
+
+      {{md-btn text='Submit'
+        action='submit'
+        class='indigo darken-2 right'}}
+
+      {{md-btn text='Back'
+        action='back'
+        class='grey darken-2'}}
+    </form>
+  {{/md-card}}
+</div>

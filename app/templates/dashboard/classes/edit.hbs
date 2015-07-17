@@ -1,18 +1,46 @@
 <div class="col s6 offset-s3">
   <h2>New Class</h2>
 
-  <div class="card">
-    <form class="card-content">
-      {{md-input value=title label='Class Title'}}
+  {{#md-card-collapsible}}
+      {{#md-collapsible
+          title="Class Details"}}
 
-      {{md-btn text='Submit'
-        action='submit'
-        class='indigo darken-2 right'}}
+          <form class="card-content">
+            {{md-input value=title label='Class Title'}}
 
-      {{md-btn text='Back'
-        action='back'
-        class='grey darken-2'}}
-    </form>
-  </div>
+            {{md-btn text='Submit'
+              action='submit'
+              class='indigo darken-2 right'}}
+
+            {{md-btn text='Back'
+              action='back'
+              class='grey darken-2'}}
+          </form>
+      {{/md-collapsible}}
+      {{#md-collapsible
+          active=true
+          title="Students"}}
+
+          {{#link-to 'dashboard.classes.add-student' model class='waves-effect waves-light btn'}}
+            Add Student
+          {{/link-to}}
+
+          {{#if model.students}}
+          {{#md-collection content=model.students as |student|}}
+            <div class='collection-item'>
+              {{student.firstName}} {{student.lastName}}
+              <a href="mailto:{{student.email}}">{{student.email}}</a>
+
+              <span class="secondary-content">
+                {{#link-to 'dashboard.students.edit' student}}
+                  Edit
+                {{/link-to}}
+
+                <a href="#" {{action 'removeStudent' student}}>X</a>
+              </span>
+            </div>
+          {{/md-collection}}
+          {{/if}}
+      {{/md-collapsible}}
+  {{/md-card-collapsible}}
 </div>
-
