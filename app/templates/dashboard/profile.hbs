@@ -1,0 +1,39 @@
+<div class="col s6 offset-s3">
+  <h2>User Profile</h2>
+
+  {{#md-card-collapsible}}
+    {{#md-collapsible
+      active=true
+      title="Change Email"}}
+      <form class="card-content" {{action 'submitEmail' on='submit'}}>
+        {{md-input label='Old Email' value=oldEmail}}
+        {{md-input label='New Email' value=newEmail}}
+        {{md-input label='Current Password' type='password' value=emailPassword}}
+
+        {{md-btn text='Submit'
+          action='submitEmail'
+          class='indigo darken-2 right'}}
+
+        {{md-btn text='Back'
+          action='back'
+          class='grey darken-2'}}
+      </form>
+    {{/md-collapsible}}
+    {{#md-collapsible
+      title="Change Password"}}
+      <form class="card-content" {{action 'submitPassword' on='submit'}}>
+        {{md-input label='Email' value=passwordEmail}}
+        {{md-input label='Old Password' type='password' value=oldPassword}}
+        {{md-input label='New Password' type='password' value=newPassword}}
+
+        {{md-btn text='Submit'
+          action='submitPassword'
+          class='indigo darken-2 right'}}
+
+        {{md-btn text='Back'
+          action='back'
+          class='grey darken-2'}}
+      </form>
+      {{/md-collapsible}}
+  {{/md-card-collapsible}}
+</div>

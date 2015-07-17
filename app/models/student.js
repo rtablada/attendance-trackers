@@ -6,6 +6,10 @@ export default DS.Model.extend({
   lastName: DS.attr('string'),
   currentAttendance: 'on-time',
 
+  fullName: function () {
+    return `${this.get('firstName')} ${this.get('lastName')}`;
+  }.property('firstName', 'lastName'),
+
   cohort: DS.belongsTo('cohort', {async: true}),
   attendanceRecords: DS.hasMany('attendance-record', {async: true}),
 

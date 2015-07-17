@@ -1,7 +1,10 @@
-{{#md-navbar name='Attendance Tracker' class='indigo' homeRoute='dashboard'}}
+{{#md-navbar name='Attendance Tracker' class='indigo' homeRoute='dashboard.classes.index'}}
   <!-- A workaround to get the "active" class
     to apply to the active <li> automatically -->
   {{#if session.isAuthenticated}}
+    {{#link-to 'dashboard.profile' tagName='li'}}
+      {{link-to 'Profile' 'dashboard.profile'}}
+    {{/link-to}}
     {{#link-to 'logout' tagName='li'}}
       {{link-to 'Logout' 'logout'}}
     {{/link-to}}

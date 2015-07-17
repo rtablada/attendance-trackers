@@ -28,7 +28,7 @@
           {{#if model.students}}
           {{#md-collection content=model.students as |student|}}
             <div class='collection-item'>
-              {{student.firstName}} {{student.lastName}}
+              {{student.fullName}}
               <a href="mailto:{{student.email}}">{{student.email}}</a>
 
               <span class="secondary-content">
