@@ -1,0 +1,15 @@
+<h2>Set New Attendance</h2>
+
+<form {{action 'submit' on='submit'}}>
+  {{md-input-date label='Date' value=date}}
+
+  {{student-attendance-selector student=model}}
+
+  {{md-btn text='Back'
+    action='back'
+    class='grey darken-2'}}
+
+  {{md-btn text='Submit'
+    action='submit'
+    class='indigo darken-2 right'}}
+</form>

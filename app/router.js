@@ -9,13 +9,15 @@ Router.map(function() {
   this.route('login');
   this.route('logout');
 
-  this.route('dashboard', {path: '/'}, function () {
-    this.route('students', function () {
-      this.route('attendance', {path: 'attendance/:student_id'});
+  this.route('dashboard', {path: '/'}, function() {
+    this.route('students', function() {
+      this.route('attendance', {path: 'attendance/:student_id'}, function() {
+        this.route('create', {path: 'new'});
+      });
       this.route('edit', {path: 'edit/:student_id'});
     });
 
-    this.route('classes', {path: '/'}, function () {
+    this.route('classes', {path: '/'}, function() {
       this.route('create', {path: 'new-class'});
       this.route('edit', {path: 'class-details/:cohort_id'});
       this.route('add-student', {path: 'add-student/:cohort_id'});

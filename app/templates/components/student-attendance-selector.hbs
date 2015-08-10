@@ -1,0 +1,9 @@
+{{#md-radios selection=student.currentAttendance}}
+    {{md-radio value='on-time' name='On Time' default=true tagName='span'}}
+    {{md-radio value='less-15' name='< 15 Late' tagName='span'}}
+    {{md-radio value='more-15' name='> 15 Late' tagName='span'}}
+    {{md-radio value='more-30' name='> 30 Late' tagName='span'}}
+    {{md-radio value='excused' name='Excused' tagName='span'}}
+{{/md-radios}}
+
+{{md-input label='Note' placeholder='Note' value=student.currentAttendanceNote}}
