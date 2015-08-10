@@ -15,6 +15,12 @@ export default Ember.Controller.extend({
 
       model.setProperties(this.getProperties('title'));
       model.save().then(this.saveSuccess.bind(this));
+    },
+
+    removeStudent: function(student) {
+      if (confirm('Delete Student: ' + student.get('fullName'))) {
+        student.destroyRecord();
+      }
     }
   }
 });
