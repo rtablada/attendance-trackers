@@ -1,4 +1,13 @@
 import DS from 'ember-data';
+import Ember from 'ember';
+
+const typeDays = function(str) {
+  return Ember.computed('attendanceRecords.@each.status', function() {
+    return this.get('attendanceRecords').filter(function(record) {
+      return record.get('status') === str;
+    }).length;
+  });
+};
 
 export default DS.Model.extend({
   email: DS.attr('string'),
@@ -22,5 +31,10 @@ export default DS.Model.extend({
 
     this.get('attendanceRecords').pushObject(attendanceRecord);
     attendanceRecord.save().then(this.save.bind(this));
-  }
+  },
+
+  onTimeDays: typeDays('on-time'),
+  less15Days: typeDays('less-15'),
+  more15Days: typeDays('more-15'),
+  more30Days: typeDays('more-30')
 });

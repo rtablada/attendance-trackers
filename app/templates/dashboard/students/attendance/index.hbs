@@ -3,6 +3,12 @@
 {{/link-to}}
 
 {{#md-collection content=records as |attendance|}}
+  <table><tr>
+    <td><strong>On Time:</strong> {{model.onTimeDays}}</td>
+    <td><strong>&lt; 15:</strong> {{model.less15Days}}</td>
+    <td><strong>&gt; 15:</strong> {{model.more15Days}}</td>
+    <td><strong>&gt; 30:</strong> {{model.more30Days}}</td>
+  </tr></table>
   <div class='collection-item'>
     {{moment-date attendance.date}}
 
