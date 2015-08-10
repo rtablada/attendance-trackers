@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
       if (config.firebase) {
           this.set('firebase', new Firebase(config.firebase));
       } else {
-          throw new Error("'firebase' not defined in environment");
+          throw new Error(''firebase' not defined in environment');
       }
 
       this._super();
