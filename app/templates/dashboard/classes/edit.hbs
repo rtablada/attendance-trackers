@@ -32,6 +32,9 @@
               <a href="mailto:{{student.email}}">{{student.email}}</a>
 
               <span class="secondary-content">
+                {{#link-to 'dashboard.students.attendance' student}}
+                  Attendance
+                {{/link-to}} -
                 {{#link-to 'dashboard.students.edit' student}}
                   Edit
                 {{/link-to}}

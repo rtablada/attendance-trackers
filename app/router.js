@@ -11,6 +11,7 @@ Router.map(function() {
 
   this.route('dashboard', {path: '/'}, function () {
     this.route('students', function () {
+      this.route('attendance', {path: 'attendance/:student_id'});
       this.route('edit', {path: 'edit/:student_id'});
     });
 

@@ -1,0 +1,13 @@
+<div class="col s6 offset-s3">
+  <h2>Attendance {{ model.fullName }}</h2>
+
+  {{#md-collection content=records as |attendance|}}
+    <div class='collection-item'>
+      {{moment-date attendance.date}}
+
+      <span class="secondary-content">
+        {{attendance.status}}
+      </span>
+    </div>
+  {{/md-collection}}
+</div>
