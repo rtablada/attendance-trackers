@@ -20,10 +20,7 @@ export default Ember.Controller.extend({
       model.save().then(this.saveSuccess.bind(this));
     },
     back: function () {
-      var model = this.get('model');
-      model.destroyRecord();
-
-      this.transitionToRoute('dashboard.classes.edit', this.get('cohort'));
+      this.transitionToRoute('dashboard.classes.edit', this.get('model.cohort'));
     }
   }
 });
